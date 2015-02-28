@@ -4,9 +4,9 @@ Contributors: Doug Yuen
 Author URI: http://efficientwp.com
 Plugin URI: http://efficientwp.com/genesis-simple-page-sections
 Tags: genesis, genesiswp, studiopress
-Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 0.1
+Requires at least: 4.0
+Tested up to: 4.1.1
+Stable tag: 1.0
 License: GPLv2 or later
 
 Easily make full width page sections in Genesis. Must be using the Genesis theme framework.
@@ -37,9 +37,13 @@ Plugin page: [http://efficientwp.com/plugins/genesis-simple-page-sections](http:
 
 == Screenshots ==
 
-1. An example of the plugin in use on http://efficientwp.com (using the Dynamik child theme).
+1. An example of the plugin in use (using the Dynamik child theme).
 
 == Changelog ==
+
+= 1.0 =
+* Fixed CSS to make width 100% and be compatible with Genesis 2.0
+* Improved shortcode documentation
 
 = 0.1 =
 * Initial release
