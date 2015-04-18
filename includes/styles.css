@@ -2,29 +2,23 @@ body.genesis-simple-page-sections .site-container,
 body.genesis-simple-page-sections #inner,
 body.genesis-simple-page-sections #inner .wrap,
 body.genesis-simple-page-sections #content-sidebar-wrap, 
+body.genesis-simple-page-sections div.content-sidebar-wrap, 
 body.genesis-simple-page-sections #content,
+body.genesis-simple-page-sections main.content, 
 body.genesis-simple-page-sections div.site-inner,
 body.genesis-simple-page-sections div.site-inner article,
 body.genesis-simple-page-sections div.site-inner .wrap {
-  max-width: none!important;
-  padding: 0px!important;
-  width: 100%!important;
+  margin-bottom: 0;
+  max-width: none;
+  padding: 0;
+  width: 100%;
 }
-/*@media only screen and (max-width: 800px) {
-  body.genesis-simple-page-sections #inner div.wrap {
-    padding: 0px!important;
-  }
-  div.gsps-outer {
-    padding: 0% 1%!important;
-  }
-}/**/
-
 div.gsps-outer {
   clear: both; 
   display: block; 
   overflow: hidden;
-  padding: 1%; 
-  width: 98%;
+  padding: 0;
+  width: 100%;
 }
 div.gsps-inner {
   margin: 5rem auto;

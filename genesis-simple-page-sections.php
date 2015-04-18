@@ -1,64 +1,28 @@
 <?php
 /*
 Plugin Name: Genesis Simple Page Sections
-Plugin URI: http://efficientwp.com/genesis-simple-page-sections
+Plugin URI: http://efficientwp.com/plugins/genesis-simple-page-sections
 Description: Easily make full width page sections in Genesis. Must be using the Genesis theme framework.
-Version: 1.0
+Version: 1.1
 Author: Doug Yuen
 Author URI: http://efficientwp.com
 License: GPLv2
 */
 
-define( 'GSPS_PLUGIN_PATH_FOR_SUBDIRS', plugins_url( str_replace( dirname( dirname( __FILE__ ) ), '', dirname( __FILE__ ) ) ) );
-register_activation_hook( __FILE__, array( $this, 'activation_hook' ) );
-
 add_shortcode( 'genesis-simple-page-section', 'ewp_gsps' );
 add_shortcode( 'gsps', 'ewp_gsps' );
-/*wp_enqueue_style( 'genesis-simple-page-sections-styles', GSPS_PLUGIN_PATH_FOR_SUBDIRS . '/includes/styles.css'  );/**/
-add_action( 'genesis_meta', 'ewp_gsps_css' );
 add_filter( 'body_class', 'ewp_gsps_body_class');
+add_action( 'wp_enqueue_scripts', 'ewp_gsps_load_scripts' );
 
+function ewp_gsps_load_scripts() {
+	wp_enqueue_style( 'gsps-styles', plugin_dir_url( __FILE__ ) . 'includes/styles.css' );
+}
 function ewp_gsps_check( ) {
 	global $post;
 	if( has_shortcode( $post->post_content, 'genesis-simple-page-section' ) ) {
 		return true;
 	} else {
 		return false;
-	}
-}
-function ewp_gsps_css( ) {
-	if( ewp_gsps_check() ) {
-		add_filter( 'genesis_pre_get_option_site_layout', 'full_width_content' );
-		$gsps_css = '<style type="text/css">
-			body.genesis-simple-page-sections .site-container,
-			body.genesis-simple-page-sections #inner,
-			body.genesis-simple-page-sections #inner .wrap,
-			body.genesis-simple-page-sections #content-sidebar-wrap, 
-			body.genesis-simple-page-sections div.content-sidebar-wrap, 
-			body.genesis-simple-page-sections #content,
-			body.genesis-simple-page-sections main.content, 
-			body.genesis-simple-page-sections div.site-inner,
-			body.genesis-simple-page-sections div.site-inner article,
-			body.genesis-simple-page-sections div.site-inner .wrap {
-			  margin-bottom: 0;
-			  max-width: none;
-			  padding: 0;
-			  width: 100%;
-			}
-			div.gsps-outer {
-			  clear: both; 
-			  display: block; 
-			  overflow: hidden;
-			  padding: 0;
-			  width: 100%;
-			}
-			div.gsps-inner {
-			  margin: 5rem auto;
-			  max-width: 800px;
-			  overflow: hidden;
-			}
-		</style>';
-		echo preg_replace( '/\s\s+/', '', $gsps_css );
 	}
 }
 function ewp_gsps_body_class( $classes ) {
