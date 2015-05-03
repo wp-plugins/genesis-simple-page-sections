@@ -3,7 +3,7 @@
 Plugin Name: Genesis Simple Page Sections
 Plugin URI: http://efficientwp.com/plugins/genesis-simple-page-sections
 Description: Easily make full width page sections in Genesis. Must be using the Genesis theme framework.
-Version: 1.1
+Version: 1.2
 Author: Doug Yuen
 Author URI: http://efficientwp.com
 License: GPLv2
@@ -19,7 +19,7 @@ function ewp_gsps_load_scripts() {
 }
 function ewp_gsps_check( ) {
 	global $post;
-	if( has_shortcode( $post->post_content, 'genesis-simple-page-section' ) ) {
+	if( has_shortcode( $post->post_content, 'genesis-simple-page-section' ) || has_shortcode( $post->post_content, 'gsps' ) ) {
 		return true;
 	} else {
 		return false;

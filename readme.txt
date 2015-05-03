@@ -5,7 +5,7 @@ Author URI: http://efficientwp.com
 Plugin URI: http://efficientwp.com/plugins/genesis-simple-page-sections
 Tags: genesis, genesiswp, studiopress, page sections, shortcode
 Requires at least: 4.0
-Tested up to: 4.1.1
+Tested up to: 4.2.1
 Stable tag: trunk
 License: GPLv2 or later
 
@@ -13,22 +13,23 @@ Easily make full width page sections in Genesis. Must be using the Genesis theme
 
 == Description ==
 
-Easily make full width page sections in Genesis via shortcode. Must be using the [Genesis theme framework](http://www.shareasale.com/r.cfm?B=386922&U=488446&M=28169&urllink= "Genesis theme framework").
+Easily make full width page sections in Genesis via shortcode. Must be using the [Genesis theme framework](http://efficientwp.com/genesis "Genesis theme framework").
 
 Notes:
 
 * If you use this shortcode on a page, you should enclose all of your content on the page within one or more instances of the shortcode. In order for this plugin to create a full width section, you must specify the page/post layout to be "full width content." 
 * Breadcrumbs and other sections dynamically inserted in the inner content section may stretch to full width, but you can add custom CSS to your theme's style.css (preferably your child theme's style.css, or a custom CSS plugin) to accommodate it. You need to get the class or id of the section you do not want to stretch, and assign the properties "max-width: 800px;" (or whatever width you want the section to be) and "margin: 0 auto;" to it.
+* The shortcode syntax \[gsps\] was added in Genesis Simple Page Sections version 1.2, and it does the same thing as the \[genesis-simple-page-section\] syntax. The new syntax was simply added to make it easier to type. If you are already using the \[genesis-simple-page-section\] syntax, don't worry. That syntax will continue to work and be supported for all future versions. You can continue to use the old syntax, switch over to the new one, or use both of them, it doesn't matter.
 
 Basic shortcode syntax:
 
-\[genesis-simple-page-section color="orange" width="960" outer_css="" inner_css=""\]
+\[gsps color="orange" width="960" outer_css="" inner_css=""\]
 
-\[/genesis-simple-page-section\]
+\[/gsps\]
 
-For more about the shortcode syntax, available parameters, and color presets, please visit the plugin page: [http://efficientwp.com/plugins/genesis-simple-page-sections](http://efficientwp.com/plugins/genesis-simple-page-sections= "Genesis Simple Page Sections").
+For more about the shortcode syntax, available parameters, and color presets, please visit the [plugin page on EfficientWP](http://efficientwp.com/plugins/genesis-simple-page-sections "Genesis Simple Page Sections").
 
-Created by [EfficientWP](http://efficientwp.com= "EfficientWP").
+Created by [EfficientWP](http://efficientwp.com "EfficientWP").
 
 == Installation ==
 
@@ -38,13 +39,17 @@ Created by [EfficientWP](http://efficientwp.com= "EfficientWP").
 
 == Frequently Asked Questions ==
 
-Plugin page: [http://efficientwp.com/plugins/genesis-simple-page-sections](http://efficientwp.com/plugins/genesis-simple-page-sections= "Genesis Simple Page Sections").
+[Plugin page on EfficientWP](http://efficientwp.com/plugins/genesis-simple-page-sections "Genesis Simple Page Sections")
 
 == Screenshots ==
 
-1. An example of the plugin in use (using the Dynamik child theme).
+1. An example of the plugin in use, using the [Dynamik child theme for Genesis](http://efficientwp.com/dynamik "Dynamik child theme for Genesis").
 
 == Changelog ==
+
+= 1.2 =
+* Confirmed compatibility up to WordPress 4.2.1
+* Added alternate shortcode syntax \[gsps\]
 
 = 1.1 =
 * Improved instructions
